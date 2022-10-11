@@ -9,7 +9,7 @@ var server = http.createServer(function(req, res) {
 	console.log(req.method + ' ' + req.url);
 	
 	if (req.method == 'GET') {
-		var file = '.' + url.parse(req.url).pathname;
+		var file = '.' + url.parse(req.url).pathname +".txt";
 		fs.stat(file, function(err, stats) {
 			if (err != null) {
 				if (err.errno == 2) {
